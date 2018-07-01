@@ -3,11 +3,21 @@ package com.tecsup.javawebavanzado.sesion03.modelo;
 public class Categoria {
 	Integer id;
 	String nombre;
+	String descripcion;
 
-	public Categoria(Integer id, String nombre) {
+	public Categoria(Integer id, String nombre, String descripcion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public Integer getId() {

@@ -10,9 +10,9 @@ public class GestionCategorias {
 	static Collection<Categoria> categorias = new ArrayList<Categoria>();
 
 	static {
-		categorias.add(new Categoria(1, "Electrónica"));
-		categorias.add(new Categoria(2, "Libros"));
-		categorias.add(new Categoria(3, "Deportes"));
+		categorias.add(new Categoria(1, "Electrónica", "Electrónica"));
+		categorias.add(new Categoria(2, "Libros", "Libros"));
+		categorias.add(new Categoria(3, "Deportes", "Deportes"));
 	}
 
 	public Collection<Categoria> listar() throws DAOExcepcion {

@@ -2,8 +2,13 @@ package com.tecsup.javawebavanzado.sesion03.beans;
 
 import java.util.Collection;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.component.datatable.DataTable;
+import org.primefaces.event.CellEditEvent;
 
 import com.tecsup.javawebavanzado.sesion03.excepcion.DAOExcepcion;
 import com.tecsup.javawebavanzado.sesion03.modelo.Categoria;
@@ -39,6 +44,22 @@ public class CategoriaBean {
 			System.out.println("Total de productos: " + productos.size());
 		} catch (DAOExcepcion e) {
 			e.printStackTrace();
+		}
+	}
+
+	public void onCellEdit(CellEditEvent event) {
+
+		Object newValue = event.getNewValue();
+		Object oldValue = event.getOldValue();
+
+		DataTable o = (DataTable) event.getSource();
+		Categoria objeto = (Categoria) o.getRowData();
+		System.out.println(objeto.getId());
+
+		if (newValue != null && !newValue.equals(oldValue)) {
+			FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Actualizado",
+					"Antes: " + oldValue + ", Después:" + newValue);
+			FacesContext.getCurrentInstance().addMessage(null, msg);
 		}
 	}
 
