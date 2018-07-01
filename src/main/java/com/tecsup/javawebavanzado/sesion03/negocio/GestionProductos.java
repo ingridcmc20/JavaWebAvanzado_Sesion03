@@ -11,13 +11,17 @@ public class GestionProductos {
 	static HashMap<Integer, Collection<Producto>> productosXcategorias = new HashMap<Integer, Collection<Producto>>();
 
 	static {
-		productosXcategorias.put(new Integer(1), Arrays.asList(new Producto(10, "Smartphone", "Smartphone", "phone"),
-				new Producto(11, "Tablet", "Tablet", "tablet")));
+		productosXcategorias.put(new Integer(1), Arrays.asList(
+				new Producto(10, "Smartphone", "Smartphone", "phone",500),
+				new Producto(11, "Tablet", "Tablet", "tablet",1000),
+				new Producto(12, "Smartwatch", "Smartwatch", "iwatch",450),
+				new Producto(13, "SmarTV", "SmarTV", "tv",1450)
+				));
 		productosXcategorias.put(new Integer(2),
-				Arrays.asList(new Producto(20, "La Casa Verde", "La Casa Verde", "verde"),
-						new Producto(21, "El Capitan Grant", "El Capitan Grant", "capitan")));
-		productosXcategorias.put(new Integer(3), Arrays.asList(new Producto(30, "Futbol", "Futbol", "futbol"),
-				new Producto(31, "Voley", "Voley", "voley")));
+				Arrays.asList(new Producto(20, "La Casa Verde", "La Casa Verde", "verde",15),
+						new Producto(21, "El Capitan Grant", "El Capitan Grant", "capitan",15)));
+		productosXcategorias.put(new Integer(3), Arrays.asList(new Producto(30, "Futbol", "Futbol", "futbol",0),
+				new Producto(31, "Voley", "Voley", "voley",0)));
 
 	}
 

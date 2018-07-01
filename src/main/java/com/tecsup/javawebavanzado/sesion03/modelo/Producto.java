@@ -7,12 +7,13 @@ public class Producto {
 	String imagen;
 	double precio;
 
-	public Producto(Integer id, String nombre, String descripcion, String imagen) {
+	public Producto(Integer id, String nombre, String descripcion, String imagen, double precio) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.imagen = imagen;
+		this.precio = precio;
 	}
 
 	public Integer getId() {

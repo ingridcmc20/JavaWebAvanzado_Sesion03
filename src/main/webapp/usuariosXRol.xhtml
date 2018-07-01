@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+</h:head>
+<h:body>
+
+	<h:form id="form">
+		<h3>Usuarios por rol</h3>
+
+		<c:forEach items="#{usuariosPorRolBean.roles}" var="rol">
+			<p:commandButton value="#{rol.nombre}"
+				actionListener="${usuariosPorRolBean.cargarUsuarios(rol.id)}"
+				update=":form:dgUsuarios" />
+		</c:forEach>
+		<p:dataTable value="#{usuariosPorRolBean.usuarios}"
+			var="usuario" style="width: 50%" emptyMessage="No hay usuarios" id="dgUsuarios">
+			<p:column>
+				<f:facet name="header">Nombre</f:facet>
+			#{usuario.nombres}
+			</p:column>
+			<p:column>
+				<f:facet name="header">Paterno</f:facet>
+			#{usuario.paterno}
+			</p:column>
+			<p:column>
+				<f:facet name="header">Materno</f:facet>
+			#{usuario.materno}
+			</p:column>
+			<p:column>
+				<f:facet name="header">Correo</f:facet>
+			#{usuario.correo}
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
